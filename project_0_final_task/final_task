@@ -1,0 +1,58 @@
+""" Игра Угадай число
+Компьютер загадывает число, а пользователь пытается угадать"""
+
+import numpy as np
+
+
+def score_game(guess_number) -> int:
+    """За какое количество попыток (в среднем) угадывается число при 1000 повторений
+
+    Args:
+        guess_number (_type_): Функция угадывания
+
+    Returns:
+        int: Среднее количество попыток
+    """
+    count_ls = [] # список для сохранения количества попыток
+    np.random.seed(1) # фиксируем сид для воспроизводимости
+    random_array = np.random.randint(1, 101, size=(1000)) # загадали список чисел
+    
+    for number in random_array:
+        count_ls.append(guess_number(number))
+        
+    score = int(np.mean(count_ls))
+    
+    print(f"Average number of tries: {score}")
+    return score
+
+
+def guess_number(number:int=1) -> int:
+    """Угадываем число
+
+    Args:
+        number (int, optional): Загаданное число. Defaults to 1.
+
+    Returns:
+        int: Количество попыток
+    """
+    count = 1 # задаем счетчик попыток
+    mn = 1 # задаем минимальное значение диапазона
+    mx = 101 # задаем максимальное значение диапазона
+    
+    predict_number = (mn + mx) // 2 
+    
+    while number != predict_number:
+        count += 1
+        
+        if number < predict_number:
+            mx = predict_number
+        else:
+            mn = predict_number
+        
+        predict_number = (mn + mx) // 2
+        
+    return count
+
+
+# RUN
+score_game(guess_number)
