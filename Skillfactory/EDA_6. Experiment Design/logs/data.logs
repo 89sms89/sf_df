@@ -1,0 +1,11 @@
+INFO: 2022-10-31 21:32:05,537: Data
+INFO: 2022-10-31 21:32:05,537: Data shape (110527, 14)
+INFO: 2022-10-31 21:32:05,583: Percentage of women: 0.653882342398853
+INFO: 2022-10-31 21:32:05,604: Percentage of men: 0.346117657601147
+ERROR: 2022-10-31 21:36:08,619: Data shape is incorrect!
+ERROR: 2022-11-01 13:02:46,621: Data shape is incorrect!
+WARNING: 2022-11-01 13:05:16,996: Это сообщение-предупреждение
+ERROR: 2022-11-01 13:05:16,998: Это сообщение об ошибке
+CRITICAL: 2022-11-01 13:05:16,999: Это критическое сообщение
+ERROR: 2022-11-01 13:05:17,394: Data shape is incorrect!
+ERROR: 2022-11-01 13:05:17,394: Data shape is incorrect!
